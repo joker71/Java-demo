@@ -135,14 +135,14 @@ public class Product {
         return list;
     }
 
-    public Product findProduct(Connection conn) throws SQLException {// xem 1 sp theo ma
+    public List<Product> findProduct(Connection conn) throws SQLException {// xem 1 sp theo ma
         String sql = "Select a.CODE, a.NAME, a.SIZE, a.BRAND,A.COLOR, a.PRICEOUT, a.PRICEINT a.NUMBER from Product a where a.CODE=?";
 
         PreparedStatement pstm = conn.prepareStatement(sql);
         pstm.setString(1, this.code);
 
         ResultSet rs = pstm.executeQuery();
-
+        List<Product> list = new ArrayList<Product>();
         while (rs.next()) {
             String brand = rs.getString("BRAND");
             String name = rs.getString("NAME");
@@ -158,9 +158,9 @@ public class Product {
             this.setNumber(number);
             this.setPrice(priceout);
             this.setPriceint(priceint);
-            return this;
+            list.add(this);
         }
-        return null;
+        return list; 
     }
 
     public void updateProduct(Connection conn) throws SQLException { // cap nhat sp
