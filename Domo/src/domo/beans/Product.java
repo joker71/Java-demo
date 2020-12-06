@@ -164,7 +164,7 @@ public class Product {
     }
 
     public void updateProduct(Connection conn) throws SQLException { // cap nhat sp
-        String sql = "UPDATE_PRODUCT_SET_NAME_PRICEINT_PRICEOUT_DES_NUMBER_WHERE_CODE";
+        String sql = "UPDATE PRODUCT= ? SET= ? NAME= ? PRICEINT= ? PRICEOUT= ? DES= ? NUMBER= ? WHERE CODE= ?";
 
         PreparedStatement pstm = conn.prepareStatement(sql);
 
