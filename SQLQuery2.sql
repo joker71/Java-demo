@@ -1,4 +1,5 @@
 ﻿create database QLBH
+use QLBH
 create table USER_ACCOUNT
 (
  USER_NAME VARCHAR(30) not null,
