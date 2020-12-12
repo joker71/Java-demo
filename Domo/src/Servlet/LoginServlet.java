@@ -61,7 +61,7 @@ public class LoginServlet extends HttpServlet {
             Connection conn = MyUtils.getStoredConnection(request);
             try {
                 // Tìm user trong DB.
-               user = DBUtils.findUser(conn, userName, password);
+                //  user = DBUtils.findUser(conn, userName, password);
                usertmp= new UserAccount(userName, password);
                user= usertmp.findUser(conn);
                 if (user == null) {

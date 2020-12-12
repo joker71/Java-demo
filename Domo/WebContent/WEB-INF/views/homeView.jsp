@@ -22,6 +22,9 @@
          <li>Create Product</li>
          <li>Edit Product</li>
          <li>Delete Product</li>
+         <li>Edit User information</li>
+         <li>Change password</li>
+         <li>Show User information</li>
       </ul>
  
      <jsp:include page="_footer.jsp"></jsp:include>
